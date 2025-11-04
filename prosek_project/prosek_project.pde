@@ -1,12 +1,21 @@
 void setup() {
-  size(1200, 500);
-  background(200);  
-  noFill();
-  stroke(255, 102, 0);;
-  stroke(0, 0, 0);
-  bezier(120*random(4), 80*random(4),  320*random(4), 20*random(4),  320*random(4), random(4)*300,  random(4)*120, random(4)*300);
-  
-  
-  
-  
+  int application = 0;
+  size(1200, 600);
+  background(0);
+  drawEclipse(170, 310, 180, 180,-6);
+  drawEclipse(280, 270, 180, 180,-5.5);
+  drawEclipse(380, 220, 180, 180,-5);
+  drawEclipse(420, 200, 180, 180,-4.5);
+}
+void drawEclipse(float x, float y, float h, float z, float rot) {
+  push();
+  fill(230, 211, 145);
+  fill(255, 200, 100);
+  translate(x/2, y/2);
+  rotate(PI/rot);
+
+  ellipse(x, y, h, z);     // big circle (moon)
+  fill(0);                 // background color (to "cut out")
+  ellipse(x+80, y, h, z);
+  pop();
 }
