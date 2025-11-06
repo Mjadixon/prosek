@@ -4,16 +4,18 @@ void setup() {
   stroke(255, 220, 150);
   strokeWeight(4);
   noStroke();
+  
+noStroke();
   //fish 1
   drawEclipse(120-100, 310, 180, 180, -6);
   drawEclipse(120-120, 330, 180, 180, -3);
   drawEclipse(180-120, 310, 180, 180, -2.62);
   drawEclipse(290-120, 270, 300, 180, -2.3);
   //fish 2
-  drawEclipse(120+100, 310, 180, 180, 2);
-  drawEclipse(220+100, 330, 180, 180, -2);
-  drawEclipse(350+100, 300, 180, 180, -2.5);
-  drawEclipse(490+100, 200, 300, 180, -2.5);
+  drawEclipse(120+200, 210, 180, 180, -12);
+  drawEclipse(220+200, 230, 180, 180, -12);
+  drawEclipse(350+200, 200, 180, 180, -12.5);
+  drawEclipse(490+200, 200, 300, 180, -14.5);
 }
 void drawEclipse(float x, float y, float h, float z, float rot) {
   push();
@@ -25,5 +27,8 @@ void drawEclipse(float x, float y, float h, float z, float rot) {
   ellipse(x, y, h, z);   // big circle (moon)
   fill(0);               // background color (to "cut out")
   ellipse(x+80, y, h, z);
+  stroke(255, 200, 100);
+  strokeWeight(6);
+  line(x - h/2, y, x + h*0.3, y);
   pop();
 }
