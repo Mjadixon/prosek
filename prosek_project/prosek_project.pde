@@ -21,16 +21,19 @@ void setup() {
 }
 
 void drawEclipse(float x, float y, float h, float z, float rot) {
+  float r = random(255);
+  float b = random(255);
+  float g = random(255);
   push();
   fill(230, 211, 145);
-  fill(255, 200, 100);
+  fill(r,g,b);
   translate(x/2, y/2); // sets origin
   rotate(PI/rot);      // rotates the fish
 
   ellipse(x, y, h, z);   // big circle (moon)
   fill(0);               // background color (to "cut out")
   ellipse(x+80, y, h, z);
-  stroke(255, 200, 100);
+  stroke(r, g, b);
   strokeWeight(6);
   line(x - h/2, y, x + h*0.3, y);
   pop();
