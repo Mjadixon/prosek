@@ -12,12 +12,7 @@ void setup() {
   drawEclipse(290-120, 270, 300, 180, -2.3);
   drawPedestal(200, 500); // pedestal for fish 1
 
-  // Fish 2
-  drawEclipse(220+200, 410, 180, 180, -6.8);
-  drawEclipse(232+200, 430, 180, 180, -3);
-  drawEclipse(215+200, 400, 180, 180, -2.62);
-  drawEclipse(200+200, 470, 300, 180, -2.3);
-  drawPedestal(850, 500); // pedestal for fish 2
+
 }
 
 void drawEclipse(float x, float y, float h, float z, float rot) {
@@ -40,10 +35,10 @@ void drawPedestal(float x, float y) {
   push();
   rectMode(CENTER);
   fill(150,75,0);       
-  ellipse(x+100, y - 60, 10, 50); // top of cylinder// dark base
+  ellipse(x+100, y - 60, 10, 50); // top of cylinder
   fill(120);
-  rect(x+100, y-10, 100, 90);  // flat platform
-              // light cylindrical base
+  rect(x+100, y-10, 100, 90);  //Pedestal Base
+             
   
   pop();
 }
