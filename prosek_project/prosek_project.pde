@@ -4,25 +4,28 @@ void setup() {
   stroke(255, 220, 150);
   strokeWeight(4);
   noStroke();
-  
-noStroke();
-  //fish 1
+
+  // Fish 1
   drawEclipse(120-100, 310, 180, 180, -6);
   drawEclipse(120-120, 330, 180, 180, -3);
   drawEclipse(180-120, 310, 180, 180, -2.62);
   drawEclipse(290-120, 270, 300, 180, -2.3);
-  //fish 2
-  drawEclipse(120+200, 210, 180, 180, -12);
-  drawEclipse(220+200, 230, 180, 180, -12);
-  drawEclipse(350+200, 200, 180, 180, -12.5);
-  drawEclipse(490+200, 200, 300, 180, -14.5);
+  drawPedestal(200, 500); // pedestal for fish 1
+
+  // Fish 2
+  drawEclipse(220+200, 410, 180, 180, -6.8);
+  drawEclipse(232+200, 430, 180, 180, -3);
+  drawEclipse(215+200, 400, 180, 180, -2.62);
+  drawEclipse(200+200, 470, 300, 180, -2.3);
+  drawPedestal(850, 500); // pedestal for fish 2
 }
+
 void drawEclipse(float x, float y, float h, float z, float rot) {
   push();
   fill(230, 211, 145);
   fill(255, 200, 100);
-  translate(x/2, y/2);//sets orgin
-  rotate(PI/rot);//rotates the fish
+  translate(x/2, y/2); // sets origin
+  rotate(PI/rot);      // rotates the fish
 
   ellipse(x, y, h, z);   // big circle (moon)
   fill(0);               // background color (to "cut out")
@@ -30,5 +33,17 @@ void drawEclipse(float x, float y, float h, float z, float rot) {
   stroke(255, 200, 100);
   strokeWeight(6);
   line(x - h/2, y, x + h*0.3, y);
+  pop();
+}
+
+void drawPedestal(float x, float y) {
+  push();
+  rectMode(CENTER);
+  fill(150,75,0);       
+  ellipse(x+100, y - 60, 10, 50); // top of cylinder// dark base
+  fill(120);
+  rect(x+100, y-10, 100, 90);  // flat platform
+              // light cylindrical base
+  
   pop();
 }
