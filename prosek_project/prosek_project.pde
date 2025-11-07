@@ -12,7 +12,12 @@ void setup() {
   drawEclipse(290-120, 270, 300, 180, -2.3);
   drawPedestal(200, 500); // pedestal for fish 1
 
-
+  // Fish 2
+  //drawEclipse(220+200, 410, 180, 180, -2.8);
+ // drawEclipse(232+200, 430, 180, 180, -3);
+  //drawEclipse(215+200, 400, 180, 180, -2.62);
+  //drawEclipse(200+200, 470, 300, 180, -2.3);
+  //drawPedestal(850, 500); // pedestal for fish 2
 }
 
 void drawEclipse(float x, float y, float h, float z, float rot) {
